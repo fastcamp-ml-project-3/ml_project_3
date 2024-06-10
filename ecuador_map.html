@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cf826647fb4259dcde519464f6fe62ae {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cf826647fb4259dcde519464f6fe62ae" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cf826647fb4259dcde519464f6fe62ae = L.map(
+                "map_cf826647fb4259dcde519464f6fe62ae",
+                {
+                    center: [-1.8312, -78.1834],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e47d867e5a71f8ff9179bbf2f8cc2b8f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_e47d867e5a71f8ff9179bbf2f8cc2b8f.addTo(map_cf826647fb4259dcde519464f6fe62ae);
+        
+    
+            var marker_cluster_ca49bf33527055fc0ae17760240fd34f = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_34cbd57f5c6d48c91ee69b99f36b93de = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_f3657ecb8a2c8d2a08e2414eee4ee086 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_34cbd57f5c6d48c91ee69b99f36b93de.setIcon(icon_f3657ecb8a2c8d2a08e2414eee4ee086);
+        
+    
+        var popup_ab7a369c2ea5430cfdcb43ef015ab930 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43c668b63a22d9432dc0041f9c7f76f4 = $(`<div id="html_43c668b63a22d9432dc0041f9c7f76f4" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_ab7a369c2ea5430cfdcb43ef015ab930.setContent(html_43c668b63a22d9432dc0041f9c7f76f4);
+            
+        
+
+        marker_34cbd57f5c6d48c91ee69b99f36b93de.bindPopup(popup_ab7a369c2ea5430cfdcb43ef015ab930)
+        ;
+
+        
+    
+    
+            var marker_4e1750e6a70020fea9a66b104ac93746 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_373ab5e12722c7f729282f4932d6233f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4e1750e6a70020fea9a66b104ac93746.setIcon(icon_373ab5e12722c7f729282f4932d6233f);
+        
+    
+        var popup_5a602b485c8fdf2c79e74fc65fe63016 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b441861f38ff7beaa9e7caca7ffe9f1e = $(`<div id="html_b441861f38ff7beaa9e7caca7ffe9f1e" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_5a602b485c8fdf2c79e74fc65fe63016.setContent(html_b441861f38ff7beaa9e7caca7ffe9f1e);
+            
+        
+
+        marker_4e1750e6a70020fea9a66b104ac93746.bindPopup(popup_5a602b485c8fdf2c79e74fc65fe63016)
+        ;
+
+        
+    
+    
+            var marker_a08408b7956c626e04105dadc30c1cff = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_c52fba81b59d6dce363abea980835f83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a08408b7956c626e04105dadc30c1cff.setIcon(icon_c52fba81b59d6dce363abea980835f83);
+        
+    
+        var popup_05a95a76a3eb0e12b99205f692a9bdd3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b748e2972b0afa7134c376e56ba0478 = $(`<div id="html_0b748e2972b0afa7134c376e56ba0478" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_05a95a76a3eb0e12b99205f692a9bdd3.setContent(html_0b748e2972b0afa7134c376e56ba0478);
+            
+        
+
+        marker_a08408b7956c626e04105dadc30c1cff.bindPopup(popup_05a95a76a3eb0e12b99205f692a9bdd3)
+        ;
+
+        
+    
+    
+            var marker_b521278e0c5db3e9f966492629c62a6f = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_52363b00b01252cf856b472345751674 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b521278e0c5db3e9f966492629c62a6f.setIcon(icon_52363b00b01252cf856b472345751674);
+        
+    
+        var popup_d37af3984a178ff4ed2c3d6a38bc3c0d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e0b49eec219b3975be0f365d8734de64 = $(`<div id="html_e0b49eec219b3975be0f365d8734de64" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_d37af3984a178ff4ed2c3d6a38bc3c0d.setContent(html_e0b49eec219b3975be0f365d8734de64);
+            
+        
+
+        marker_b521278e0c5db3e9f966492629c62a6f.bindPopup(popup_d37af3984a178ff4ed2c3d6a38bc3c0d)
+        ;
+
+        
+    
+    
+            var marker_25af6758a4c1aeb5eb2ecabb5a0093c2 = L.marker(
+                [-0.2534, -79.17],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_42abe7a3a3dc116ea7edfe6f6ae5d4c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_25af6758a4c1aeb5eb2ecabb5a0093c2.setIcon(icon_42abe7a3a3dc116ea7edfe6f6ae5d4c9);
+        
+    
+        var popup_bcbe63d286edc40bbf941698ec4e43ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c4d7c51c935614b194757323797d490 = $(`<div id="html_5c4d7c51c935614b194757323797d490" style="width: 100.0%; height: 100.0%;">City: Santo Domingo, State: Santo Domingo de los Tsachilas, Type: D</div>`)[0];
+                popup_bcbe63d286edc40bbf941698ec4e43ad.setContent(html_5c4d7c51c935614b194757323797d490);
+            
+        
+
+        marker_25af6758a4c1aeb5eb2ecabb5a0093c2.bindPopup(popup_bcbe63d286edc40bbf941698ec4e43ad)
+        ;
+
+        
+    
+    
+            var marker_5a7d644d5c502eca4d85ceeeb6eb59f0 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_d2122e8e9ee5fcc88fc1b4196a1876d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5a7d644d5c502eca4d85ceeeb6eb59f0.setIcon(icon_d2122e8e9ee5fcc88fc1b4196a1876d5);
+        
+    
+        var popup_1c1a65de0037726df6bff62f9cf751bd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7320dda85d0a3844cd9f589b04455741 = $(`<div id="html_7320dda85d0a3844cd9f589b04455741" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_1c1a65de0037726df6bff62f9cf751bd.setContent(html_7320dda85d0a3844cd9f589b04455741);
+            
+        
+
+        marker_5a7d644d5c502eca4d85ceeeb6eb59f0.bindPopup(popup_1c1a65de0037726df6bff62f9cf751bd)
+        ;
+
+        
+    
+    
+            var marker_68a395a4290fba188e285bf0c528faef = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_e3db75b94956547351f8e0df93775c87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_68a395a4290fba188e285bf0c528faef.setIcon(icon_e3db75b94956547351f8e0df93775c87);
+        
+    
+        var popup_6057ba5336eb9addf421e5068e7a4d8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_905490b68058e914b9e3daa34030b7c6 = $(`<div id="html_905490b68058e914b9e3daa34030b7c6" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_6057ba5336eb9addf421e5068e7a4d8a.setContent(html_905490b68058e914b9e3daa34030b7c6);
+            
+        
+
+        marker_68a395a4290fba188e285bf0c528faef.bindPopup(popup_6057ba5336eb9addf421e5068e7a4d8a)
+        ;
+
+        
+    
+    
+            var marker_1813aa5f4c75a422436192ef9119c80a = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_6432f2862ac7b18270a1f62d0729ed08 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1813aa5f4c75a422436192ef9119c80a.setIcon(icon_6432f2862ac7b18270a1f62d0729ed08);
+        
+    
+        var popup_c5f9983f7d19310ea0dd3d58efd877c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b60c32715aecc9e9d7aec0f48f30223b = $(`<div id="html_b60c32715aecc9e9d7aec0f48f30223b" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: D</div>`)[0];
+                popup_c5f9983f7d19310ea0dd3d58efd877c6.setContent(html_b60c32715aecc9e9d7aec0f48f30223b);
+            
+        
+
+        marker_1813aa5f4c75a422436192ef9119c80a.bindPopup(popup_c5f9983f7d19310ea0dd3d58efd877c6)
+        ;
+
+        
+    
+    
+            var marker_98d57514e4c34b742a1f546dd11d7df2 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_14dccbbfa3ae26699f5e4b426e8b82c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_98d57514e4c34b742a1f546dd11d7df2.setIcon(icon_14dccbbfa3ae26699f5e4b426e8b82c0);
+        
+    
+        var popup_5f38b63fe03cd51f329dd9aa4c002bdc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2820bcc5df160c47dc3aef89138d2ff0 = $(`<div id="html_2820bcc5df160c47dc3aef89138d2ff0" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: B</div>`)[0];
+                popup_5f38b63fe03cd51f329dd9aa4c002bdc.setContent(html_2820bcc5df160c47dc3aef89138d2ff0);
+            
+        
+
+        marker_98d57514e4c34b742a1f546dd11d7df2.bindPopup(popup_5f38b63fe03cd51f329dd9aa4c002bdc)
+        ;
+
+        
+    
+    
+            var marker_5d49202414083aac600cc7b86590829d = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_a78058470b9dff04ef3b61eceda99678 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5d49202414083aac600cc7b86590829d.setIcon(icon_a78058470b9dff04ef3b61eceda99678);
+        
+    
+        var popup_9d456dbf230573fcbeb653408c766cdb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8657640174ccae5a880ffbf9962df5e9 = $(`<div id="html_8657640174ccae5a880ffbf9962df5e9" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: C</div>`)[0];
+                popup_9d456dbf230573fcbeb653408c766cdb.setContent(html_8657640174ccae5a880ffbf9962df5e9);
+            
+        
+
+        marker_5d49202414083aac600cc7b86590829d.bindPopup(popup_9d456dbf230573fcbeb653408c766cdb)
+        ;
+
+        
+    
+    
+            var marker_716495188b5541805ab237519d2fca4f = L.marker(
+                [0.0328, -78.1455],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_8a62c0ba998d5a9d6ebcb45c9c0494de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_716495188b5541805ab237519d2fca4f.setIcon(icon_8a62c0ba998d5a9d6ebcb45c9c0494de);
+        
+    
+        var popup_c59ba4da61d85079e8d8480f65c65fa2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d59e23642a0fe58ea0f7275f7428ab1 = $(`<div id="html_8d59e23642a0fe58ea0f7275f7428ab1" style="width: 100.0%; height: 100.0%;">City: Cayambe, State: Pichincha, Type: B</div>`)[0];
+                popup_c59ba4da61d85079e8d8480f65c65fa2.setContent(html_8d59e23642a0fe58ea0f7275f7428ab1);
+            
+        
+
+        marker_716495188b5541805ab237519d2fca4f.bindPopup(popup_c59ba4da61d85079e8d8480f65c65fa2)
+        ;
+
+        
+    
+    
+            var marker_7aa08009fd7e10dc6a4752e2e3205add = L.marker(
+                [-0.9333, -78.6167],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_7b7b0e6ff61e6fcdc8b6873cc6fa64a8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7aa08009fd7e10dc6a4752e2e3205add.setIcon(icon_7b7b0e6ff61e6fcdc8b6873cc6fa64a8);
+        
+    
+        var popup_d216a6ee44196ab5e1ac9363d1b9e52c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cbb9374055e1964f5751f95500588584 = $(`<div id="html_cbb9374055e1964f5751f95500588584" style="width: 100.0%; height: 100.0%;">City: Latacunga, State: Cotopaxi, Type: C</div>`)[0];
+                popup_d216a6ee44196ab5e1ac9363d1b9e52c.setContent(html_cbb9374055e1964f5751f95500588584);
+            
+        
+
+        marker_7aa08009fd7e10dc6a4752e2e3205add.bindPopup(popup_d216a6ee44196ab5e1ac9363d1b9e52c)
+        ;
+
+        
+    
+    
+            var marker_9f80596a990df80a97514e394c994b53 = L.marker(
+                [-0.9333, -78.6167],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_4ec7cd8ad5f27374ce5eb2359e2aba90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9f80596a990df80a97514e394c994b53.setIcon(icon_4ec7cd8ad5f27374ce5eb2359e2aba90);
+        
+    
+        var popup_90871b0462d97c546b1df5a7db74dc15 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_87f0ab2beae87b617fcb4a5f9045ae00 = $(`<div id="html_87f0ab2beae87b617fcb4a5f9045ae00" style="width: 100.0%; height: 100.0%;">City: Latacunga, State: Cotopaxi, Type: C</div>`)[0];
+                popup_90871b0462d97c546b1df5a7db74dc15.setContent(html_87f0ab2beae87b617fcb4a5f9045ae00);
+            
+        
+
+        marker_9f80596a990df80a97514e394c994b53.bindPopup(popup_90871b0462d97c546b1df5a7db74dc15)
+        ;
+
+        
+    
+    
+            var marker_cf6ec100abdb238374161d951ecf29ff = L.marker(
+                [-1.6635, -78.6546],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_3078e19dcae10d9b757cbfea341c94a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cf6ec100abdb238374161d951ecf29ff.setIcon(icon_3078e19dcae10d9b757cbfea341c94a3);
+        
+    
+        var popup_4ac251fa2c08ef49ae24d3759ca76e00 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1791b3d19c6e8fa3a83c93c00e01510 = $(`<div id="html_f1791b3d19c6e8fa3a83c93c00e01510" style="width: 100.0%; height: 100.0%;">City: Riobamba, State: Chimborazo, Type: C</div>`)[0];
+                popup_4ac251fa2c08ef49ae24d3759ca76e00.setContent(html_f1791b3d19c6e8fa3a83c93c00e01510);
+            
+        
+
+        marker_cf6ec100abdb238374161d951ecf29ff.bindPopup(popup_4ac251fa2c08ef49ae24d3759ca76e00)
+        ;
+
+        
+    
+    
+            var marker_9a59a2f883d8edef020c28264ea4df9b = L.marker(
+                [0.3392, -78.1223],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_9f090ae96e2c9fef14db121a21d81150 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9a59a2f883d8edef020c28264ea4df9b.setIcon(icon_9f090ae96e2c9fef14db121a21d81150);
+        
+    
+        var popup_6061ac1a22f9056c934f048e85941ed0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aca06763396a7f03e82d3a5788e0a048 = $(`<div id="html_aca06763396a7f03e82d3a5788e0a048" style="width: 100.0%; height: 100.0%;">City: Ibarra, State: Imbabura, Type: C</div>`)[0];
+                popup_6061ac1a22f9056c934f048e85941ed0.setContent(html_aca06763396a7f03e82d3a5788e0a048);
+            
+        
+
+        marker_9a59a2f883d8edef020c28264ea4df9b.bindPopup(popup_6061ac1a22f9056c934f048e85941ed0)
+        ;
+
+        
+    
+    
+            var marker_d51d406b3dbaeb7ef6064902777cff38 = L.marker(
+                [-0.2534, -79.17],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_864fee23bae22e65ac63943520ba1956 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d51d406b3dbaeb7ef6064902777cff38.setIcon(icon_864fee23bae22e65ac63943520ba1956);
+        
+    
+        var popup_35a4755bb5765d8adb5e900e373dbccb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d26a3824e88366cc357c961ff4da5a20 = $(`<div id="html_d26a3824e88366cc357c961ff4da5a20" style="width: 100.0%; height: 100.0%;">City: Santo Domingo, State: Santo Domingo de los Tsachilas, Type: C</div>`)[0];
+                popup_35a4755bb5765d8adb5e900e373dbccb.setContent(html_d26a3824e88366cc357c961ff4da5a20);
+            
+        
+
+        marker_d51d406b3dbaeb7ef6064902777cff38.bindPopup(popup_35a4755bb5765d8adb5e900e373dbccb)
+        ;
+
+        
+    
+    
+            var marker_31bccee370ce8a8ff4bf012885ae78a3 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_fcd12f15927d06d341545a4c65b5a129 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_31bccee370ce8a8ff4bf012885ae78a3.setIcon(icon_fcd12f15927d06d341545a4c65b5a129);
+        
+    
+        var popup_75a29d452b798795afee7a85981ce5d7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10fd51ffdd135921456695291e0a5897 = $(`<div id="html_10fd51ffdd135921456695291e0a5897" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: C</div>`)[0];
+                popup_75a29d452b798795afee7a85981ce5d7.setContent(html_10fd51ffdd135921456695291e0a5897);
+            
+        
+
+        marker_31bccee370ce8a8ff4bf012885ae78a3.bindPopup(popup_75a29d452b798795afee7a85981ce5d7)
+        ;
+
+        
+    
+    
+            var marker_cfd8ed299242102001630f97b686d31b = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_09b20cf6269a4a99e2499037dec57633 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cfd8ed299242102001630f97b686d31b.setIcon(icon_09b20cf6269a4a99e2499037dec57633);
+        
+    
+        var popup_d2b11dfaaa133b1b357539ca9f6e6398 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c46c038e9df34e9b7cd4e6425afb01db = $(`<div id="html_c46c038e9df34e9b7cd4e6425afb01db" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: B</div>`)[0];
+                popup_d2b11dfaaa133b1b357539ca9f6e6398.setContent(html_c46c038e9df34e9b7cd4e6425afb01db);
+            
+        
+
+        marker_cfd8ed299242102001630f97b686d31b.bindPopup(popup_d2b11dfaaa133b1b357539ca9f6e6398)
+        ;
+
+        
+    
+    
+            var marker_116be8d1fa1bfecd1692995286a242fe = L.marker(
+                [-1.5943, -79.0016],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_bdfb5c848ff2a46b383a6ae7f380503b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_116be8d1fa1bfecd1692995286a242fe.setIcon(icon_bdfb5c848ff2a46b383a6ae7f380503b);
+        
+    
+        var popup_352cbe346189edcf048f706a9f597db6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b4ae2093bd7c137f1d32aa385249138 = $(`<div id="html_0b4ae2093bd7c137f1d32aa385249138" style="width: 100.0%; height: 100.0%;">City: Guaranda, State: Bolivar, Type: C</div>`)[0];
+                popup_352cbe346189edcf048f706a9f597db6.setContent(html_0b4ae2093bd7c137f1d32aa385249138);
+            
+        
+
+        marker_116be8d1fa1bfecd1692995286a242fe.bindPopup(popup_352cbe346189edcf048f706a9f597db6)
+        ;
+
+        
+    
+    
+            var marker_d407e88ab64db33c3bdf486942a1cac6 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_781f121fe8434c1d1cd686cb93f0e05d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d407e88ab64db33c3bdf486942a1cac6.setIcon(icon_781f121fe8434c1d1cd686cb93f0e05d);
+        
+    
+        var popup_0a4ed0741a1784bf4629b90522d63454 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5bc5218affd33a89bc23fb873f9da0fb = $(`<div id="html_5bc5218affd33a89bc23fb873f9da0fb" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: B</div>`)[0];
+                popup_0a4ed0741a1784bf4629b90522d63454.setContent(html_5bc5218affd33a89bc23fb873f9da0fb);
+            
+        
+
+        marker_d407e88ab64db33c3bdf486942a1cac6.bindPopup(popup_0a4ed0741a1784bf4629b90522d63454)
+        ;
+
+        
+    
+    
+            var marker_5af72678e3abd3c7c460e1c028e74cc9 = L.marker(
+                [-0.2534, -79.17],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_b1addcfe78a4fdfd111a2212e8ca8199 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5af72678e3abd3c7c460e1c028e74cc9.setIcon(icon_b1addcfe78a4fdfd111a2212e8ca8199);
+        
+    
+        var popup_8d96a427039a1ca5ef94ed95815c488f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ea64c18ede838e4588c7ebfa62ec558 = $(`<div id="html_6ea64c18ede838e4588c7ebfa62ec558" style="width: 100.0%; height: 100.0%;">City: Santo Domingo, State: Santo Domingo de los Tsachilas, Type: B</div>`)[0];
+                popup_8d96a427039a1ca5ef94ed95815c488f.setContent(html_6ea64c18ede838e4588c7ebfa62ec558);
+            
+        
+
+        marker_5af72678e3abd3c7c460e1c028e74cc9.bindPopup(popup_8d96a427039a1ca5ef94ed95815c488f)
+        ;
+
+        
+    
+    
+            var marker_2fa6dd234d534ef9e554d905bcbd2aeb = L.marker(
+                [-1.4923, -78.0024],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_98445bafc05a76abf317b08b26a96d44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2fa6dd234d534ef9e554d905bcbd2aeb.setIcon(icon_98445bafc05a76abf317b08b26a96d44);
+        
+    
+        var popup_b056afffde91aced2998ac955fc08e51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f67973c68b95111f856fe27a12a1b6c5 = $(`<div id="html_f67973c68b95111f856fe27a12a1b6c5" style="width: 100.0%; height: 100.0%;">City: Puyo, State: Pastaza, Type: C</div>`)[0];
+                popup_b056afffde91aced2998ac955fc08e51.setContent(html_f67973c68b95111f856fe27a12a1b6c5);
+            
+        
+
+        marker_2fa6dd234d534ef9e554d905bcbd2aeb.bindPopup(popup_b056afffde91aced2998ac955fc08e51)
+        ;
+
+        
+    
+    
+            var marker_c42e935ef63492e6f5f6d38164727b69 = L.marker(
+                [-1.2417, -78.6197],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_bad79d1a31d2be147fc4c550be211ceb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c42e935ef63492e6f5f6d38164727b69.setIcon(icon_bad79d1a31d2be147fc4c550be211ceb);
+        
+    
+        var popup_c1344aa7255e2aa9c57d94045d9d6823 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8bed1a2e090f098e883b2750ca2df0ec = $(`<div id="html_8bed1a2e090f098e883b2750ca2df0ec" style="width: 100.0%; height: 100.0%;">City: Ambato, State: Tungurahua, Type: D</div>`)[0];
+                popup_c1344aa7255e2aa9c57d94045d9d6823.setContent(html_8bed1a2e090f098e883b2750ca2df0ec);
+            
+        
+
+        marker_c42e935ef63492e6f5f6d38164727b69.bindPopup(popup_c1344aa7255e2aa9c57d94045d9d6823)
+        ;
+
+        
+    
+    
+            var marker_5c3ba9d23464f5f841a0404197cd85db = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_ec41fbd08e604d8f3c42c987ee249d4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5c3ba9d23464f5f841a0404197cd85db.setIcon(icon_ec41fbd08e604d8f3c42c987ee249d4a);
+        
+    
+        var popup_edd992bc1b0da1dffb12bedeb261360d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_835e81bb0579ce59f33f7ed281382330 = $(`<div id="html_835e81bb0579ce59f33f7ed281382330" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: D</div>`)[0];
+                popup_edd992bc1b0da1dffb12bedeb261360d.setContent(html_835e81bb0579ce59f33f7ed281382330);
+            
+        
+
+        marker_5c3ba9d23464f5f841a0404197cd85db.bindPopup(popup_edd992bc1b0da1dffb12bedeb261360d)
+        ;
+
+        
+    
+    
+            var marker_31da7c2064f2c8dbd1aa6113ba397cd7 = L.marker(
+                [-2.2149, -80.9597],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_df2062b1b75338069e7974e2c4da679a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_31da7c2064f2c8dbd1aa6113ba397cd7.setIcon(icon_df2062b1b75338069e7974e2c4da679a);
+        
+    
+        var popup_e4f27625f98c936ebff24fbe350af1bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67535b91968950d1bc5cfaa6e4e734b0 = $(`<div id="html_67535b91968950d1bc5cfaa6e4e734b0" style="width: 100.0%; height: 100.0%;">City: Salinas, State: Santa Elena, Type: D</div>`)[0];
+                popup_e4f27625f98c936ebff24fbe350af1bf.setContent(html_67535b91968950d1bc5cfaa6e4e734b0);
+            
+        
+
+        marker_31da7c2064f2c8dbd1aa6113ba397cd7.bindPopup(popup_e4f27625f98c936ebff24fbe350af1bf)
+        ;
+
+        
+    
+    
+            var marker_3926d93b5b064efe5e939aab481362aa = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_07e2df7c48d385f708abc88766303102 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3926d93b5b064efe5e939aab481362aa.setIcon(icon_07e2df7c48d385f708abc88766303102);
+        
+    
+        var popup_1aa63e991458c5e62a8a33b35594d3e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_22560c15746f72ed40f1e9ca7ff4cc45 = $(`<div id="html_22560c15746f72ed40f1e9ca7ff4cc45" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: D</div>`)[0];
+                popup_1aa63e991458c5e62a8a33b35594d3e2.setContent(html_22560c15746f72ed40f1e9ca7ff4cc45);
+            
+        
+
+        marker_3926d93b5b064efe5e939aab481362aa.bindPopup(popup_1aa63e991458c5e62a8a33b35594d3e2)
+        ;
+
+        
+    
+    
+            var marker_2f1f87ff43eb39b72e3a59481dea8944 = L.marker(
+                [-1.8617, -79.9773],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_e0bc939ff0c112ad3fbf1fcae037ef05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2f1f87ff43eb39b72e3a59481dea8944.setIcon(icon_e0bc939ff0c112ad3fbf1fcae037ef05);
+        
+    
+        var popup_b7200b795b75a5db4a98bf59328b199c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63d4c7136d8475eb8615fdbb2e2f00f1 = $(`<div id="html_63d4c7136d8475eb8615fdbb2e2f00f1" style="width: 100.0%; height: 100.0%;">City: Daule, State: Guayas, Type: D</div>`)[0];
+                popup_b7200b795b75a5db4a98bf59328b199c.setContent(html_63d4c7136d8475eb8615fdbb2e2f00f1);
+            
+        
+
+        marker_2f1f87ff43eb39b72e3a59481dea8944.bindPopup(popup_b7200b795b75a5db4a98bf59328b199c)
+        ;
+
+        
+    
+    
+            var marker_2bea6b8357897edc505db4a225fa1aa1 = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_35d5161e07094f1d6bfdd84356a0f691 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2bea6b8357897edc505db4a225fa1aa1.setIcon(icon_35d5161e07094f1d6bfdd84356a0f691);
+        
+    
+        var popup_c57396fab40edf083afc3f8cd3b9c01d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c5f4c418c0caed2205d5f71227febe22 = $(`<div id="html_c5f4c418c0caed2205d5f71227febe22" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: E</div>`)[0];
+                popup_c57396fab40edf083afc3f8cd3b9c01d.setContent(html_c5f4c418c0caed2205d5f71227febe22);
+            
+        
+
+        marker_2bea6b8357897edc505db4a225fa1aa1.bindPopup(popup_c57396fab40edf083afc3f8cd3b9c01d)
+        ;
+
+        
+    
+    
+            var marker_47ea966dbb4e781e60beb0f8d13c36e8 = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_1a3b0633e3137e4e691f77cb43a251ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_47ea966dbb4e781e60beb0f8d13c36e8.setIcon(icon_1a3b0633e3137e4e691f77cb43a251ad);
+        
+    
+        var popup_fdeb890eeddc7aa209916308207652b3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44483d728f7240a33dd6d90826a4c5ee = $(`<div id="html_44483d728f7240a33dd6d90826a4c5ee" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: E</div>`)[0];
+                popup_fdeb890eeddc7aa209916308207652b3.setContent(html_44483d728f7240a33dd6d90826a4c5ee);
+            
+        
+
+        marker_47ea966dbb4e781e60beb0f8d13c36e8.bindPopup(popup_fdeb890eeddc7aa209916308207652b3)
+        ;
+
+        
+    
+    
+            var marker_4a3dcf6a2c0959106343f70f4f171e2d = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_4551bb0afe879e16eb48cd6074e355a7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4a3dcf6a2c0959106343f70f4f171e2d.setIcon(icon_4551bb0afe879e16eb48cd6074e355a7);
+        
+    
+        var popup_9c9441854f4539229280b92229cbe1e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b314eb73413669f49102050f59f46edb = $(`<div id="html_b314eb73413669f49102050f59f46edb" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: C</div>`)[0];
+                popup_9c9441854f4539229280b92229cbe1e7.setContent(html_b314eb73413669f49102050f59f46edb);
+            
+        
+
+        marker_4a3dcf6a2c0959106343f70f4f171e2d.bindPopup(popup_9c9441854f4539229280b92229cbe1e7)
+        ;
+
+        
+    
+    
+            var marker_7ee2da81452321c4949d6f65d225cd08 = L.marker(
+                [-1.8019, -79.5344],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_8c4fd37b8a4fcc028ddc8b0222ed2362 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7ee2da81452321c4949d6f65d225cd08.setIcon(icon_8c4fd37b8a4fcc028ddc8b0222ed2362);
+        
+    
+        var popup_275d0bcd74b869b83b6a731e97e09b64 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64ced4cd995522498727954aa9c2b745 = $(`<div id="html_64ced4cd995522498727954aa9c2b745" style="width: 100.0%; height: 100.0%;">City: Babahoyo, State: Los Rios, Type: B</div>`)[0];
+                popup_275d0bcd74b869b83b6a731e97e09b64.setContent(html_64ced4cd995522498727954aa9c2b745);
+            
+        
+
+        marker_7ee2da81452321c4949d6f65d225cd08.bindPopup(popup_275d0bcd74b869b83b6a731e97e09b64)
+        ;
+
+        
+    
+    
+            var marker_d7e6369709b00b6dd37697585a7695d0 = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_f72ff46964bf22ae4fe0a2cdb81ebbca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d7e6369709b00b6dd37697585a7695d0.setIcon(icon_f72ff46964bf22ae4fe0a2cdb81ebbca);
+        
+    
+        var popup_6a94c2fafd3b4a3f1b6b01e53b648ba9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_46a5abb6733a9627f89b3b9043620b86 = $(`<div id="html_46a5abb6733a9627f89b3b9043620b86" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: C</div>`)[0];
+                popup_6a94c2fafd3b4a3f1b6b01e53b648ba9.setContent(html_46a5abb6733a9627f89b3b9043620b86);
+            
+        
+
+        marker_d7e6369709b00b6dd37697585a7695d0.bindPopup(popup_6a94c2fafd3b4a3f1b6b01e53b648ba9)
+        ;
+
+        
+    
+    
+            var marker_922921e3eb3d5cade2cab743654a42d0 = L.marker(
+                [-1.0305, -79.4635],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_a10a32bd1457c829b2aba84e0bccbcb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_922921e3eb3d5cade2cab743654a42d0.setIcon(icon_a10a32bd1457c829b2aba84e0bccbcb0);
+        
+    
+        var popup_7993b55c5b42c01b89317998921e4ca4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56d3903ea1c9ec5022d3440cb1c49437 = $(`<div id="html_56d3903ea1c9ec5022d3440cb1c49437" style="width: 100.0%; height: 100.0%;">City: Quevedo, State: Los Rios, Type: C</div>`)[0];
+                popup_7993b55c5b42c01b89317998921e4ca4.setContent(html_56d3903ea1c9ec5022d3440cb1c49437);
+            
+        
+
+        marker_922921e3eb3d5cade2cab743654a42d0.bindPopup(popup_7993b55c5b42c01b89317998921e4ca4)
+        ;
+
+        
+    
+    
+            var marker_e3d93e0e888081f2507e277a8072c0da = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_51d1ae779e9745780f355a2d9cc96bca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e3d93e0e888081f2507e277a8072c0da.setIcon(icon_51d1ae779e9745780f355a2d9cc96bca);
+        
+    
+        var popup_054de5d7dbd89f3f51a18e6fce144885 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_759ac9d546425fa94fb92ce9a0193d49 = $(`<div id="html_759ac9d546425fa94fb92ce9a0193d49" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: B</div>`)[0];
+                popup_054de5d7dbd89f3f51a18e6fce144885.setContent(html_759ac9d546425fa94fb92ce9a0193d49);
+            
+        
+
+        marker_e3d93e0e888081f2507e277a8072c0da.bindPopup(popup_054de5d7dbd89f3f51a18e6fce144885)
+        ;
+
+        
+    
+    
+            var marker_65ad0688e9a94e5794c2b00f69d914c7 = L.marker(
+                [-2.6312, -80.3889],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_4b7dfa487cca1d71fe91deb404a0e549 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_65ad0688e9a94e5794c2b00f69d914c7.setIcon(icon_4b7dfa487cca1d71fe91deb404a0e549);
+        
+    
+        var popup_ce8601e5b174c36d47b5fd8d093780e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_806945d88ace36ad6cb2d8e2156d9286 = $(`<div id="html_806945d88ace36ad6cb2d8e2156d9286" style="width: 100.0%; height: 100.0%;">City: Playas, State: Guayas, Type: C</div>`)[0];
+                popup_ce8601e5b174c36d47b5fd8d093780e8.setContent(html_806945d88ace36ad6cb2d8e2156d9286);
+            
+        
+
+        marker_65ad0688e9a94e5794c2b00f69d914c7.bindPopup(popup_ce8601e5b174c36d47b5fd8d093780e8)
+        ;
+
+        
+    
+    
+            var marker_745235fe8a53f7684d70709fcf52ab78 = L.marker(
+                [-2.233, -80.904],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_8826f03a21537d793ce9445607ab6f25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_745235fe8a53f7684d70709fcf52ab78.setIcon(icon_8826f03a21537d793ce9445607ab6f25);
+        
+    
+        var popup_4a547f94dddf6e90b16fda514040258e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_480c527c607efece28698a0c0a83075d = $(`<div id="html_480c527c607efece28698a0c0a83075d" style="width: 100.0%; height: 100.0%;">City: Libertad, State: Guayas, Type: E</div>`)[0];
+                popup_4a547f94dddf6e90b16fda514040258e.setContent(html_480c527c607efece28698a0c0a83075d);
+            
+        
+
+        marker_745235fe8a53f7684d70709fcf52ab78.bindPopup(popup_4a547f94dddf6e90b16fda514040258e)
+        ;
+
+        
+    
+    
+            var marker_4b8399b87296bc3b48fb73b4893b76ec = L.marker(
+                [-2.9006, -79.0045],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_76299d6233d3638ad26ed99ac44c229f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4b8399b87296bc3b48fb73b4893b76ec.setIcon(icon_76299d6233d3638ad26ed99ac44c229f);
+        
+    
+        var popup_8dfaed308236e2b787b5f9701e154347 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb4cabcedbc9dd9dd708124c260386a8 = $(`<div id="html_bb4cabcedbc9dd9dd708124c260386a8" style="width: 100.0%; height: 100.0%;">City: Cuenca, State: Azuay, Type: D</div>`)[0];
+                popup_8dfaed308236e2b787b5f9701e154347.setContent(html_bb4cabcedbc9dd9dd708124c260386a8);
+            
+        
+
+        marker_4b8399b87296bc3b48fb73b4893b76ec.bindPopup(popup_8dfaed308236e2b787b5f9701e154347)
+        ;
+
+        
+    
+    
+            var marker_92b4bbcce16bc3220546ac53aa05577e = L.marker(
+                [-3.9931, -79.2042],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_f586ca956e015b3498c89acb46b0979b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_92b4bbcce16bc3220546ac53aa05577e.setIcon(icon_f586ca956e015b3498c89acb46b0979b);
+        
+    
+        var popup_0c55d06c6434cb18876b77d517b8ebf5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_079e6a45150d4b2af66adf77025e3eeb = $(`<div id="html_079e6a45150d4b2af66adf77025e3eeb" style="width: 100.0%; height: 100.0%;">City: Loja, State: Loja, Type: D</div>`)[0];
+                popup_0c55d06c6434cb18876b77d517b8ebf5.setContent(html_079e6a45150d4b2af66adf77025e3eeb);
+            
+        
+
+        marker_92b4bbcce16bc3220546ac53aa05577e.bindPopup(popup_0c55d06c6434cb18876b77d517b8ebf5)
+        ;
+
+        
+    
+    
+            var marker_fd944538ebd2cfaba36bc92728f43f73 = L.marker(
+                [-2.9006, -79.0045],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_c1359374f618360bc1cd5d3ff854383f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fd944538ebd2cfaba36bc92728f43f73.setIcon(icon_c1359374f618360bc1cd5d3ff854383f);
+        
+    
+        var popup_7f20e0ebc2ae0f2451af6a3221f2ad26 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d085e039af21000c296ab2e29154fbca = $(`<div id="html_d085e039af21000c296ab2e29154fbca" style="width: 100.0%; height: 100.0%;">City: Cuenca, State: Azuay, Type: B</div>`)[0];
+                popup_7f20e0ebc2ae0f2451af6a3221f2ad26.setContent(html_d085e039af21000c296ab2e29154fbca);
+            
+        
+
+        marker_fd944538ebd2cfaba36bc92728f43f73.bindPopup(popup_7f20e0ebc2ae0f2451af6a3221f2ad26)
+        ;
+
+        
+    
+    
+            var marker_e5e53673749c856f126610f9d793512a = L.marker(
+                [-3.2581, -79.9554],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_f5bfb94bf33a7835ee40a661b5c2220d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e5e53673749c856f126610f9d793512a.setIcon(icon_f5bfb94bf33a7835ee40a661b5c2220d);
+        
+    
+        var popup_dab2ba78fc27ba687a69261c5019d6f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_773feb3dc2a686bb0d035435cdaea447 = $(`<div id="html_773feb3dc2a686bb0d035435cdaea447" style="width: 100.0%; height: 100.0%;">City: Machala, State: El Oro, Type: C</div>`)[0];
+                popup_dab2ba78fc27ba687a69261c5019d6f9.setContent(html_773feb3dc2a686bb0d035435cdaea447);
+            
+        
+
+        marker_e5e53673749c856f126610f9d793512a.bindPopup(popup_dab2ba78fc27ba687a69261c5019d6f9)
+        ;
+
+        
+    
+    
+            var marker_8a8c72efd22ff100fdd92155a18f460d = L.marker(
+                [-3.2581, -79.9554],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_619076f306abfa04510104fa1e7b8af6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8a8c72efd22ff100fdd92155a18f460d.setIcon(icon_619076f306abfa04510104fa1e7b8af6);
+        
+    
+        var popup_02afb33c59a1829c85c6f058af80fcf0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a28f5b8e37dd1527e8abc71aa7efeab = $(`<div id="html_9a28f5b8e37dd1527e8abc71aa7efeab" style="width: 100.0%; height: 100.0%;">City: Machala, State: El Oro, Type: D</div>`)[0];
+                popup_02afb33c59a1829c85c6f058af80fcf0.setContent(html_9a28f5b8e37dd1527e8abc71aa7efeab);
+            
+        
+
+        marker_8a8c72efd22ff100fdd92155a18f460d.bindPopup(popup_02afb33c59a1829c85c6f058af80fcf0)
+        ;
+
+        
+    
+    
+            var marker_4e6623a039985938e250de8df287d17a = L.marker(
+                [-2.9006, -79.0045],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_9e486a8c10d43ba733b5dd194fa38db0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4e6623a039985938e250de8df287d17a.setIcon(icon_9e486a8c10d43ba733b5dd194fa38db0);
+        
+    
+        var popup_c15f930367f9a9305eed4c2b2db82ac3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4e05a1a8afd69629b0839d5e32e7b2b = $(`<div id="html_d4e05a1a8afd69629b0839d5e32e7b2b" style="width: 100.0%; height: 100.0%;">City: Cuenca, State: Azuay, Type: D</div>`)[0];
+                popup_c15f930367f9a9305eed4c2b2db82ac3.setContent(html_d4e05a1a8afd69629b0839d5e32e7b2b);
+            
+        
+
+        marker_4e6623a039985938e250de8df287d17a.bindPopup(popup_c15f930367f9a9305eed4c2b2db82ac3)
+        ;
+
+        
+    
+    
+            var marker_83812821bd601a1ab1d399d217d20860 = L.marker(
+                [0.9639, -79.6517],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_aa4b587657ddfd8282a4b9cb1b290ff8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_83812821bd601a1ab1d399d217d20860.setIcon(icon_aa4b587657ddfd8282a4b9cb1b290ff8);
+        
+    
+        var popup_22deff611f855341d0ca8275728455b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9342c29a807c489eaef88f27b987f1a = $(`<div id="html_a9342c29a807c489eaef88f27b987f1a" style="width: 100.0%; height: 100.0%;">City: Esmeraldas, State: Esmeraldas, Type: E</div>`)[0];
+                popup_22deff611f855341d0ca8275728455b1.setContent(html_a9342c29a807c489eaef88f27b987f1a);
+            
+        
+
+        marker_83812821bd601a1ab1d399d217d20860.bindPopup(popup_22deff611f855341d0ca8275728455b1)
+        ;
+
+        
+    
+    
+            var marker_2c6ecfa47d6d1e4812ff41ae79b088aa = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_739523ee91ddb12bca5405a275a25fe8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2c6ecfa47d6d1e4812ff41ae79b088aa.setIcon(icon_739523ee91ddb12bca5405a275a25fe8);
+        
+    
+        var popup_db4e2e998107b1d064fa8b759ce64981 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95816bb470f7ff0ac4b667b3da6730ac = $(`<div id="html_95816bb470f7ff0ac4b667b3da6730ac" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_db4e2e998107b1d064fa8b759ce64981.setContent(html_95816bb470f7ff0ac4b667b3da6730ac);
+            
+        
+
+        marker_2c6ecfa47d6d1e4812ff41ae79b088aa.bindPopup(popup_db4e2e998107b1d064fa8b759ce64981)
+        ;
+
+        
+    
+    
+            var marker_3354a4c3e96f03cdd6df2e50119b13c9 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_24f60e20dee6f05803c5d8316d01f2b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3354a4c3e96f03cdd6df2e50119b13c9.setIcon(icon_24f60e20dee6f05803c5d8316d01f2b5);
+        
+    
+        var popup_2036db7afb09a49c7e07ff8a60dd73ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5623fbac597a2cfa866dd45895c559e1 = $(`<div id="html_5623fbac597a2cfa866dd45895c559e1" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_2036db7afb09a49c7e07ff8a60dd73ac.setContent(html_5623fbac597a2cfa866dd45895c559e1);
+            
+        
+
+        marker_3354a4c3e96f03cdd6df2e50119b13c9.bindPopup(popup_2036db7afb09a49c7e07ff8a60dd73ac)
+        ;
+
+        
+    
+    
+            var marker_8f585b29639fcd7cf29566386305ec43 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_890127c6cf9267f044c788c6aee51d08 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8f585b29639fcd7cf29566386305ec43.setIcon(icon_890127c6cf9267f044c788c6aee51d08);
+        
+    
+        var popup_e3ef264609132a094866e8a82784674c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42293acdd1648a2af87a052d6d5fa13a = $(`<div id="html_42293acdd1648a2af87a052d6d5fa13a" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_e3ef264609132a094866e8a82784674c.setContent(html_42293acdd1648a2af87a052d6d5fa13a);
+            
+        
+
+        marker_8f585b29639fcd7cf29566386305ec43.bindPopup(popup_e3ef264609132a094866e8a82784674c)
+        ;
+
+        
+    
+    
+            var marker_91a7577063b8f345666bdf88327a622a = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_c22ed042b8df1389dc2108511bde8374 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_91a7577063b8f345666bdf88327a622a.setIcon(icon_c22ed042b8df1389dc2108511bde8374);
+        
+    
+        var popup_b69317c540c85b2b4e1674a5fd0c43dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_195db5239abb79331d25cabd95826496 = $(`<div id="html_195db5239abb79331d25cabd95826496" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_b69317c540c85b2b4e1674a5fd0c43dc.setContent(html_195db5239abb79331d25cabd95826496);
+            
+        
+
+        marker_91a7577063b8f345666bdf88327a622a.bindPopup(popup_b69317c540c85b2b4e1674a5fd0c43dc)
+        ;
+
+        
+    
+    
+            var marker_905e628f5ee610e1783f5f3546951d37 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_910dbf75373006bf8fd0c055bbeded1e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_905e628f5ee610e1783f5f3546951d37.setIcon(icon_910dbf75373006bf8fd0c055bbeded1e);
+        
+    
+        var popup_1fa299ed10979d2bac879a3014217f46 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d42fabadb79d991894b30caf6ced783 = $(`<div id="html_4d42fabadb79d991894b30caf6ced783" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_1fa299ed10979d2bac879a3014217f46.setContent(html_4d42fabadb79d991894b30caf6ced783);
+            
+        
+
+        marker_905e628f5ee610e1783f5f3546951d37.bindPopup(popup_1fa299ed10979d2bac879a3014217f46)
+        ;
+
+        
+    
+    
+            var marker_1a30d9db9c8d8ee5dd446e10bb3702c0 = L.marker(
+                [-0.1807, -78.4678],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_e2c25f5021ee23b96ead833b993fdfa0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1a30d9db9c8d8ee5dd446e10bb3702c0.setIcon(icon_e2c25f5021ee23b96ead833b993fdfa0);
+        
+    
+        var popup_87cf80fccb8fdac79d9b8823fe42990e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5429376129bfe5641846b66d6d9104b5 = $(`<div id="html_5429376129bfe5641846b66d6d9104b5" style="width: 100.0%; height: 100.0%;">City: Quito, State: Pichincha, Type: A</div>`)[0];
+                popup_87cf80fccb8fdac79d9b8823fe42990e.setContent(html_5429376129bfe5641846b66d6d9104b5);
+            
+        
+
+        marker_1a30d9db9c8d8ee5dd446e10bb3702c0.bindPopup(popup_87cf80fccb8fdac79d9b8823fe42990e)
+        ;
+
+        
+    
+    
+            var marker_39776be29a698c7a265efac49cbac6e3 = L.marker(
+                [-1.2417, -78.6197],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_98b8d4d034cd1dab2fd2476470ffd60d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_39776be29a698c7a265efac49cbac6e3.setIcon(icon_98b8d4d034cd1dab2fd2476470ffd60d);
+        
+    
+        var popup_0c13be068307c1be4b1fe97fe8aa2cfb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a4b7039b364c5ed947752dfd04bd4c13 = $(`<div id="html_a4b7039b364c5ed947752dfd04bd4c13" style="width: 100.0%; height: 100.0%;">City: Ambato, State: Tungurahua, Type: A</div>`)[0];
+                popup_0c13be068307c1be4b1fe97fe8aa2cfb.setContent(html_a4b7039b364c5ed947752dfd04bd4c13);
+            
+        
+
+        marker_39776be29a698c7a265efac49cbac6e3.bindPopup(popup_0c13be068307c1be4b1fe97fe8aa2cfb)
+        ;
+
+        
+    
+    
+            var marker_b2bf026ac824d5c03436bf07b9450846 = L.marker(
+                [-2.19, -79.8877],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_1e15783010c4e63c33b62ded2443691e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b2bf026ac824d5c03436bf07b9450846.setIcon(icon_1e15783010c4e63c33b62ded2443691e);
+        
+    
+        var popup_a1fe8265f27cccd310f58b24b3d8a0da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3317e0de48906fb23c00a473aff7456 = $(`<div id="html_f3317e0de48906fb23c00a473aff7456" style="width: 100.0%; height: 100.0%;">City: Guayaquil, State: Guayas, Type: A</div>`)[0];
+                popup_a1fe8265f27cccd310f58b24b3d8a0da.setContent(html_f3317e0de48906fb23c00a473aff7456);
+            
+        
+
+        marker_b2bf026ac824d5c03436bf07b9450846.bindPopup(popup_a1fe8265f27cccd310f58b24b3d8a0da)
+        ;
+
+        
+    
+    
+            var marker_3e141cc3531ff6666fb3a5e731548e93 = L.marker(
+                [-0.9677, -80.7089],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_92f25990deb52294f4736651931551ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3e141cc3531ff6666fb3a5e731548e93.setIcon(icon_92f25990deb52294f4736651931551ab);
+        
+    
+        var popup_1c193d33e78a69ce56217eb8cbd46252 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5afd9a29cfcfe0d8f74abaa44a3c1553 = $(`<div id="html_5afd9a29cfcfe0d8f74abaa44a3c1553" style="width: 100.0%; height: 100.0%;">City: Manta, State: Manabi, Type: A</div>`)[0];
+                popup_1c193d33e78a69ce56217eb8cbd46252.setContent(html_5afd9a29cfcfe0d8f74abaa44a3c1553);
+            
+        
+
+        marker_3e141cc3531ff6666fb3a5e731548e93.bindPopup(popup_1c193d33e78a69ce56217eb8cbd46252)
+        ;
+
+        
+    
+    
+            var marker_fbb68fdd869f196ce368f96b94156b33 = L.marker(
+                [-0.9677, -80.7089],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_f3f1785b0cb8cf89e5462d128aee7b23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fbb68fdd869f196ce368f96b94156b33.setIcon(icon_f3f1785b0cb8cf89e5462d128aee7b23);
+        
+    
+        var popup_8523c550010c1e37caefe5bfe30065cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40b450b8ac222ddcb6a3a8fbbab2c4cd = $(`<div id="html_40b450b8ac222ddcb6a3a8fbbab2c4cd" style="width: 100.0%; height: 100.0%;">City: Manta, State: Manabi, Type: D</div>`)[0];
+                popup_8523c550010c1e37caefe5bfe30065cc.setContent(html_40b450b8ac222ddcb6a3a8fbbab2c4cd);
+            
+        
+
+        marker_fbb68fdd869f196ce368f96b94156b33.bindPopup(popup_8523c550010c1e37caefe5bfe30065cc)
+        ;
+
+        
+    
+    
+            var marker_e22dcf457ce3c976316781cf8a0add61 = L.marker(
+                [-0.3748, -79.4584],
+                {}
+            ).addTo(marker_cluster_ca49bf33527055fc0ae17760240fd34f);
+        
+    
+            var icon_82ecd18f198fdb6fe1dd681e762989d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e22dcf457ce3c976316781cf8a0add61.setIcon(icon_82ecd18f198fdb6fe1dd681e762989d5);
+        
+    
+        var popup_a9a1b06f7c7c4ca68d8ad900682591c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a97eff76b376cda5a39f34b88333271 = $(`<div id="html_5a97eff76b376cda5a39f34b88333271" style="width: 100.0%; height: 100.0%;">City: El Carmen, State: Manabi, Type: C</div>`)[0];
+                popup_a9a1b06f7c7c4ca68d8ad900682591c8.setContent(html_5a97eff76b376cda5a39f34b88333271);
+            
+        
+
+        marker_e22dcf457ce3c976316781cf8a0add61.bindPopup(popup_a9a1b06f7c7c4ca68d8ad900682591c8)
+        ;
+
+        
+    
+    
+            marker_cluster_ca49bf33527055fc0ae17760240fd34f.addTo(map_cf826647fb4259dcde519464f6fe62ae);
+        
+</script>
+</html>
