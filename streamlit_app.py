@@ -2,11 +2,12 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import plotly.graph_objects as go
 
 import time
 from datetime import datetime
 
-
+train_all = pd.read_csv("./train_all.csv")    
 # 사이드바 제목
 st.sidebar.title("Preprocessing")
 # 메인 페이지 콘텐츠
@@ -71,7 +72,7 @@ else:
 st.sidebar.title("Year Select")
 option2 = st.sidebar.selectbox(
     'Year Select',
-    ('Year', '2013', '2014', '2015', '2016', '2017', '2018')
+    ('Year', '2013', '2014', '2015', '2016', '2017')
 )
 
 if option2 == 'Year':
@@ -98,13 +99,16 @@ else:
 
 
 st.sidebar.title("Modeling")
-if st.sidebar.button('Modeling'):
-    main_title.title("Modeling")
-    main_sub1.write("가정1: 날짜와 품목과 프로모션을 가지고 Transactions을 예측한다.")
-    main_sub2.write("가정2: 위의 데이터와 예측된 Transaction을 가지고 Sales를 예측한다.")
-    pass
 
+if st.sidebar.button('Modeling Ready!'):
+    progress_bar = st.progress(0)    
 
+    for i in range(10):
+
+        time.sleep(1)  
+        # 진행바 업데이트
+        progress_bar.progress((i + 1) / 10)
+        st.write(f"데이터 {i + 1} 처리 중...")
 
 option3 = st.sidebar.selectbox(
     'Model Select',
@@ -117,7 +121,48 @@ elif option3 == 'XGBoost':
     pass
     st.write('XGBoost로 분석합니다.')
 elif option3 == 'Random Forest':
-    pass
+# Plotly 그래프 생성
+# 데이터 로드
+    predict = pd.read_csv("./test_2017.csv")
+    predict['date'] = pd.to_datetime(predict['date'])
+
+    train_all = pd.read_csv("./train_all.csv")
+    train_all['date'] = pd.to_datetime(train_all['date'])
+
+    test_2017 = train_all[(train_all['date'] >= '2017-07-01') & (train_all['date'] <= '2017-08-31')]
+    test_2017['date'] = pd.to_datetime(test_2017['date'])
+
+    # 일별 판매량 계산
+    date_sales_sum = predict.groupby('date')['sales'].sum().reset_index()
+    test_2017_grouped = test_2017.groupby(test_2017['date'])['sales'].sum().reset_index()
+
+    # store_nbr 별 판매량 계산
+    store_sales_2017 = test_2017.groupby(['store_nbr', test_2017['date']])['sales'].sum().reset_index()
+
+    # 첫 번째 그래프: 일별 판매량 라인 그래프
+    fig1 = go.Figure()
+    fig1.add_trace(go.Scatter(x=test_2017_grouped['date'], y=test_2017_grouped['sales'],
+                            mode='lines+markers', name='Daily Sales August 2017',
+                            line=dict(color='green')))
+    fig1.add_trace(go.Scatter(
+        x=date_sales_sum['date'],
+        y=date_sales_sum['sales'],
+        mode='lines+markers',
+        name='Predicted Sales Data',
+        line=dict(color='magenta')
+    ))
+    fig1.update_layout(
+        title='Daily Sales in August 2017',
+        xaxis_title='Date',
+        yaxis_title='Total Sales',
+        template='plotly_white'
+    )
+
+
+    # 스트림릿에서 그래프 표시
+    st.title('Sales Analysis for August 2017')
+    st.plotly_chart(fig1, use_container_width=True)
+    
     st.write('Random Forest로 분석합니다.')
 else:
     pass
