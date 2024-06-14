@@ -10,7 +10,7 @@ import os
 import io
 import re
 import pickle
-from prediction import get_predict
+from ml_project_3.yoonjae.streamlit.streamlit.prediction import get_predict
 
 # Get the current directory path
 current_dir = os.path.dirname(os.path.abspath(__file__))
