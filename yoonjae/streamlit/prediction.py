@@ -12,7 +12,7 @@ from gluonts.dataset.pandas import PandasDataset
 from gluonts.dataset.common import ListDataset
 from gluonts.torch import DeepAREstimator
 from gluonts.dataset.split import split
-import matplotlib.pyplot as plt
+
 
 
 
@@ -52,15 +52,15 @@ def get_predict(sales_data):
         df.set_index('date', inplace=True)
 
         ## sales 컬럼 생성을 위한 예측
-        forecast = get_gluonts(df, 'sales')
+        forecast_sales = get_gluonts(df, 'sales')
 
-        deepAR['sales']  = forecast[0].mean
+        deepAR['sales']  = forecast_sales[0].mean
 
         ## transactions 컬럼 생성을 위한 예측
         # Prepare ListDataset
-        forecast = get_gluonts(df, 'transactions')
+        forecast_transactions = get_gluonts(df, 'transactions')
         
-        deepAR['transactions']  = forecast[0].mean
+        deepAR['transactions']  = forecast_transactions[0].mean
 
         # rolling: not to make NaN, concat with dataset before two weeks
         deepAR_before= temp[(temp['date']>='2017-08-01')&(temp['date']<='2017-08-15')&(temp['store_nbr']==store)&(temp['family']==family)][['date', 'store_nbr', 'family', 'sales', 'transactions', 'onpromotion']]
@@ -96,7 +96,22 @@ def get_predict(sales_data):
         
         
         ################################### final : RandomForestRegressor ######################################      
+        data = temp[(temp['year'].isin([2016, 2017])) & (temp.store_nbr == store) & (temp.family == family)][['date', 'sales', 'onpromotion_lag1', 'transactions', 'day_of_week']]
+        
+        # day_of_week
+        data['day_of_week'] = data['day_of_week'].astype('category')
+        data = pd.get_dummies(data, columns=['day_of_week'])
+        
+        # rolling
+        get_rolling(data)
+        
+        data.dropna(inplace=True)
+        
+        # Features 및 target 설정
+        X = data[['onpromotion_lag1', 'transactions', 'slope7', 'std7', 'mean7', 'skew7', 'kurt7', 'min7', 'max7', 'slope14', 'std14', 'mean14', 'skew14', 'kurt14', 'min14', 'max14','day_of_week_Wednesday', 'day_of_week_Thursday', 'day_of_week_Friday', 'day_of_week_Saturday', 'day_of_week_Sunday', 'day_of_week_Monday', 'day_of_week_Tuesday']]
+        y = data['sales']
 
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
         # 저장된 모델 불러오기
         if store==7:
@@ -106,6 +121,18 @@ def get_predict(sales_data):
 
             with open(f'rf_model_{store:02d}_{cleaned_family}.pkl', 'rb') as f:
                 rf_model = pickle.load(f)
+            
+            
+            # Get feature importances
+            importances = rf_model.feature_importances_
+            feature_names = ['onpromotion_lag1', 'transactions', 'slope7', 'std7', 'mean7', 'skew7', 'kurt7', 'min7', 'max7', 'slope14', 'std14', 'mean14', 'skew14', 'kurt14', 'min14', 'max14','day_of_week_Wednesday', 'day_of_week_Thursday', 'day_of_week_Friday', 'day_of_week_Saturday', 'day_of_week_Sunday', 'day_of_week_Monday', 'day_of_week_Tuesday']
+
+            # Create a DataFrame for visualization
+            feature_importances = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
+            # Sort the DataFrame by importance
+            feature_importances = feature_importances.sort_values(by='Importance', ascending=False)               
+            
+            
             # 예측
             pickle_model_pred = rf_model.predict(deepAR)
             
@@ -113,26 +140,20 @@ def get_predict(sales_data):
             deepAR_origin['predicted_sales'] = pickle_model_pred
 
         else:
-            data = temp[(temp['year'].isin([2016, 2017])) & (temp.store_nbr == store) & (temp.family == family)][['date', 'sales', 'onpromotion_lag1', 'transactions', 'day_of_week']]
-        
-            # day_of_week
-            data['day_of_week'] = data['day_of_week'].astype('category')
-            data = pd.get_dummies(data, columns=['day_of_week'])
             
-            # rolling
-            get_rolling(data)
-            
-            data.dropna(inplace=True)
-            
-            # Features 및 target 설정
-            X = data[['onpromotion_lag1', 'transactions', 'slope7', 'std7', 'mean7', 'skew7', 'kurt7', 'min7', 'max7', 'slope14', 'std14', 'mean14', 'skew14', 'kurt14', 'min14', 'max14','day_of_week_Wednesday', 'day_of_week_Thursday', 'day_of_week_Friday', 'day_of_week_Saturday', 'day_of_week_Sunday', 'day_of_week_Monday', 'day_of_week_Tuesday']]
-            y = data['sales']
-
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
             rf = RandomForestRegressor(n_estimators=1, random_state=42)
 
             rf.fit(X_train, y_train)
+                        
+            # Get feature importances
+            importances = rf.feature_importances_
+            feature_names = X.columns
+
+            # Create a DataFrame for visualization
+            feature_importances = pd.DataFrame({'Feature': feature_names, 'Importance': importances})
+            # Sort the DataFrame by importance
+            feature_importances = feature_importances.sort_values(by='Importance', ascending=False)               
+
             
             # Predict
             test_pred = rf.predict(deepAR)
@@ -141,10 +162,7 @@ def get_predict(sales_data):
             deepAR_origin['predicted_sales'] = test_pred
 
 
-
-
-        return deepAR_origin 
-        
+        return deepAR_origin, feature_importances, df, forecast_sales, forecast_transactions, data
 
 
 
